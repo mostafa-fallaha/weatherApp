@@ -2,14 +2,21 @@ import "./App.css";
 import useGeoCode from "./hooks/useGeoCode";
 
 function App() {
-  const { lat, lon } = useGeoCode("Paris");
-  // console.log(lat, lon);
+  const { data } = useGeoCode("Beirut");
 
   return (
     <div>
       <ul>
-        <li key={lat}>{lat}</li>
-        <li key={lon}>{lon}</li>
+        {data.map((d) => (
+          <li key={d.weather[0].id}>
+            {d.clouds} <br />
+            {d.temp} <br />
+            {d.humidity} <br />
+            {d.wind_speed} <br />
+            {d.sunriseDate} <br />
+            {d.sunsetDate}
+          </li>
+        ))}
       </ul>
     </div>
   );

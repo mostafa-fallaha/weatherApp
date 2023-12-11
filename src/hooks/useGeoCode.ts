@@ -1,37 +1,60 @@
-import axios, { CanceledError, AxiosResponse } from "axios";
+import axios, { CanceledError } from "axios";
 import { useEffect, useState } from "react";
+import { ConvertingServices } from "../services/converting-services";
 
-export interface Place {
-  name: string;
-  lat: number;
-  lon: number;
-  country: string;
-  state: string;
+interface Weather {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+interface DataDetails {
+  dt: number;
+  sunrise: number;
+  sunriseDate: string;
+  sunset: number;
+  sunsetDate: string;
+  temp: number;
+  humidity: number;
+  clouds: number;
+  wind_speed: number;
+  weather: Weather[];
+}
+
+interface AllData {
+  timezone: string;
+  data: DataDetails[];
 }
 
 const useGeoCode = (city: string) => {
-  //   const [data, setData] = useState<Place[]>([]);
-  const [lat, setLat] = useState<number>();
-  const [lon, setLon] = useState<number>();
-  //   const [name, setName] = useState<string>();
-  //   const [country, setCounty] = useState<string>();
-  //   const [state, setState] = useState<string>();
+  const apiKey = "7bc803e085054f46ebb29309b36d9fff";
+  const convert = new ConvertingServices(1);
+  const currDate = convert.DateToUnix();
+  const [data, setData] = useState<DataDetails[]>([]);
 
   useEffect(() => {
     const controler = new AbortController();
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7bc803e085054f46ebb29309b36d9fff`,
+        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`,
         { signal: controler.signal }
       )
-      .then((res: AxiosResponse<Place[]>) => {
-        // setCounty(res.data[0].country);
-        // setName(res.data[0].name);
-        // setState(res.data[0].state);
-        setLat(res.data[0].lat);
-        setLon(res.data[0].lon);
-        // console.log(res.data[0].lat);
-        // setData(res.data);
+      .then((res) => {
+        const lat = res.data[0].lat;
+        const lon = res.data[0].lon;
+
+        return axios.get<AllData>(
+          `https://api.openweathermap.org/data/3.0/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${currDate}&appid=${apiKey}&units=metric`,
+          { signal: controler.signal }
+        );
+      })
+      .then((res) => {
+        console.log(res.data);
+        const newData: DataDetails[] = res.data.data;
+        newData[0].sunriseDate = convert.UnixToDate(newData[0].sunrise);
+        newData[0].sunsetDate = convert.UnixToDate(newData[0].sunset);
+        setData(newData);
       })
       .catch((err) => {
         if (err instanceof CanceledError) return;
@@ -39,9 +62,9 @@ const useGeoCode = (city: string) => {
       });
 
     return () => controler.abort();
-  }, []);
+  }, [city]);
 
-  return { lat, lon };
+  return { data };
 };
 
 export default useGeoCode;
