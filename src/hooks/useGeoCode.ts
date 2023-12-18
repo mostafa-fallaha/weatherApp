@@ -32,6 +32,7 @@ const useGeoCode = (city: string) => {
   const convert = new ConvertingServices(1);
   const currDate = convert.DateToUnix();
   const [data, setData] = useState<DataDetails[]>([]);
+  const [place, setPlace] = useState("");
 
   useEffect(() => {
     const controler = new AbortController();
@@ -55,6 +56,7 @@ const useGeoCode = (city: string) => {
         newData[0].sunriseDate = convert.UnixToDate(newData[0].sunrise);
         newData[0].sunsetDate = convert.UnixToDate(newData[0].sunset);
         setData(newData);
+        setPlace(res.data.timezone);
       })
       .catch((err) => {
         if (err instanceof CanceledError) return;
@@ -64,7 +66,7 @@ const useGeoCode = (city: string) => {
     return () => controler.abort();
   }, [city]);
 
-  return { data };
+  return { data, place };
 };
 
 export default useGeoCode;
