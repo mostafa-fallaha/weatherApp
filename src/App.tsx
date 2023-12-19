@@ -1,11 +1,12 @@
 import { Box } from "@chakra-ui/react";
 import "./App.css";
-import useGeoCode from "./hooks/useGeoCode";
+// import useGeoCode from "./hooks/useGeoCode";
 import backimg from "../public/blue.jpg";
 import First from "./components/First";
+import Second from "./components/Second";
 
 function App() {
-  const { data } = useGeoCode("London");
+  // const { data } = useGeoCode("London");
 
   return (
     <Box
@@ -17,7 +18,8 @@ function App() {
       alignItems="center"
     >
       <First />
-      <div>
+      <Second />
+      {/* <div>
         <ul>
           {data.map((d) => (
             <li key={d.weather[0].id}>
@@ -37,7 +39,7 @@ function App() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </Box>
   );
 }
