@@ -33,9 +33,10 @@ interface Current {
   weather: Weather[];
 }
 
-interface Hourly {
+export interface Hourly {
   dt: number;
   temp: number;
+  feels_like: number;
   pressure: number;
   humidity: number;
   wind_speed: number;
