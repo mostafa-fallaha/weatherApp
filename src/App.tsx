@@ -3,7 +3,7 @@ import "./App.css";
 // import useGeoCode from "./hooks/useGeoCode";
 import backimg from "../public/blue.jpg";
 import First from "./components/First";
-import Second from "./components/Second";
+// import Second from "./components/Second";
 
 function App() {
   // const { data } = useGeoCode("London");
@@ -18,7 +18,7 @@ function App() {
       alignItems="center"
     >
       <First />
-      <Second />
+      {/* <Second /> */}
       {/* <div>
         <ul>
           {data.map((d) => (

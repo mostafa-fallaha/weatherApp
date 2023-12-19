@@ -2,25 +2,27 @@ import { HStack, Image, Text } from "@chakra-ui/react";
 import useGeoCode from "../hooks/useGeoCode";
 
 function Second() {
-  const { data } = useGeoCode("London");
+  const { current } = useGeoCode("London");
   return (
     <>
       <HStack>
-        {data.map((d) => (
+        {current && (
           <Image
             src={
               "https://openweathermap.org/img/wn/" +
-              d.weather[0].icon +
+              current.weather[0].icon +
               "@2x.png"
             }
             width={150}
-            key={d.weather[0].id}
+            key={current.weather[0].id}
           />
-        ))}
+        )}
       </HStack>
-      {data.map((d) => (
-        <Text key={d.weather[0].id}>{d.weather[0].description}</Text>
-      ))}
+      {current && (
+        <Text key={current.weather[0].id}>
+          {current.weather[0].description}
+        </Text>
+      )}
     </>
   );
 }
