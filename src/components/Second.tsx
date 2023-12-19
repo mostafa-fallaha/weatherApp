@@ -1,8 +1,12 @@
 import { HStack, Image, Text } from "@chakra-ui/react";
 import useGeoCode from "../hooks/useGeoCode";
 
-function Second() {
-  const { current } = useGeoCode("London");
+interface Props {
+  cityName: string;
+}
+
+function Second({ cityName }: Props) {
+  const { current } = useGeoCode(cityName);
   return (
     <>
       <HStack>
