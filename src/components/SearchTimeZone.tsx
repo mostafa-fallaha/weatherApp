@@ -22,6 +22,7 @@ function SearchTimeZone({ onSearch }: Props) {
           borderRadius={20}
           placeholder="enter a city name"
           variant="filled"
+          borderColor={"#63B3ED"}
         />
       </InputGroup>
     </form>

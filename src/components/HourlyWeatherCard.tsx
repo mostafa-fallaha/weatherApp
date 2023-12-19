@@ -11,7 +11,12 @@ function HourlyWeatherCard({ hour }: Props) {
   const hourIndex = date.getHours();
 
   return (
-    <Card width={220} textAlign={"center"} height={250}>
+    <Card
+      width={220}
+      textAlign={"center"}
+      height={250}
+      backgroundColor={"#3b779f"}
+    >
       <Text>
         {hourIndex === 0 ? 12 : hourIndex > 12 ? hourIndex - 12 : hourIndex}
         {hourIndex < 12 ? " am" : " pm"}
@@ -24,7 +29,7 @@ function HourlyWeatherCard({ hour }: Props) {
           alignSelf={"center"}
           marginBottom={0}
         />
-        <Text color={hour.temp < 10 ? "lightblue" : "orange"} fontSize={20}>
+        <Text color={hour.temp < 10 ? "#0BC5EA" : "orange"} fontSize={20}>
           {hour.temp}
           {`\u00B0C`}
         </Text>
