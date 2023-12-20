@@ -13,7 +13,7 @@ function First({ cityName }: Props) {
 
   return (
     <HStack width={"100%"} justifyContent={"center"} alignContent={"center"}>
-      <Text fontSize={25}>{location}</Text>
+      <Text fontSize={30}>{location}</Text>
     </HStack>
   );
 }

@@ -7,7 +7,7 @@ import SearchTimeZone from "./components/SearchTimeZone";
 import TimeZoneTitle from "./components/TimeZoneTitle";
 
 function App() {
-  const [city, setCity] = useState("London");
+  const [city, setCity] = useState("Nabatieh");
   return (
     <>
       <Box

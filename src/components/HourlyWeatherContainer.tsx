@@ -7,11 +7,13 @@ interface Props {
 }
 
 function HourlyWeatherContainer({ city }: Props) {
-  const { hourlyForecast } = useGeoCode(city);
+  const { hourlyForecast, current } = useGeoCode(city);
 
-  if (!hourlyForecast) return <HourlyWeatherSkeletons />;
+  if (!hourlyForecast || !current) return <HourlyWeatherSkeletons />;
 
-  return <HourlyWeatherGrid hourly_forecast={hourlyForecast} />;
+  return (
+    <HourlyWeatherGrid hourly_forecast={hourlyForecast} current={current} />
+  );
 }
 
 export default HourlyWeatherContainer;

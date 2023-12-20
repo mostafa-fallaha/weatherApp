@@ -14,7 +14,7 @@ function HourlyWeatherCard({ hour }: Props) {
     <Card
       width={220}
       textAlign={"center"}
-      height={250}
+      height={240}
       backgroundColor={"#3b779f"}
     >
       <Text>
@@ -29,7 +29,12 @@ function HourlyWeatherCard({ hour }: Props) {
           alignSelf={"center"}
           marginBottom={0}
         />
-        <Text color={hour.temp < 10 ? "#0BC5EA" : "orange"} fontSize={20}>
+        <Text
+          color={
+            hour.temp < 10 ? "#0BC5EA" : hour.temp < 20 ? "#ffba08" : "#fe7f2d"
+          }
+          fontSize={20}
+        >
           {hour.temp}
           {`\u00B0C`}
         </Text>
