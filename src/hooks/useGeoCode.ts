@@ -75,8 +75,10 @@ const useGeoCode = (city: string) => {
   const [hourlyForecast, setHourlyForecast] = useState<Hourly[] | null>(null);
   const [dailyForecast, setDailyForecast] = useState<Daily[] | null>(null);
   const [place, setPlace] = useState("");
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const controler = new AbortController();
     axios
       .get(
@@ -93,6 +95,7 @@ const useGeoCode = (city: string) => {
         );
       })
       .then((res) => {
+        setLoading(false);
         console.log(res.data);
         const date = new Date(res.data.current.sunrise * 1000);
         let h = date.getHours();
@@ -118,13 +121,14 @@ const useGeoCode = (city: string) => {
       })
       .catch((err) => {
         if (err instanceof CanceledError) return;
+        setLoading(false);
         console.log(err.message);
       });
 
     return () => controler.abort();
   }, [city]);
 
-  return { current, hourlyForecast, dailyForecast, place };
+  return { current, hourlyForecast, dailyForecast, place, isLoading };
 };
 
 export default useGeoCode;
