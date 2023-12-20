@@ -1,4 +1,4 @@
-import { Card, CardBody, HStack, Image, Text } from "@chakra-ui/react";
+import { Card, CardBody, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { Hourly } from "../hooks/useGeoCode";
 import getWeatherIcon from "../services/get-weather-icon";
 
@@ -17,7 +17,7 @@ function HourlyWeatherCard({ hour }: Props) {
       height={230}
       backgroundColor={"#3b779f"}
     >
-      <Text>
+      <Text fontWeight={800}>
         {hourIndex === 0 ? 12 : hourIndex > 12 ? hourIndex - 12 : hourIndex}
         {hourIndex < 12 ? " am" : " pm"}
       </Text>
@@ -29,22 +29,47 @@ function HourlyWeatherCard({ hour }: Props) {
           alignSelf={"center"}
           marginBottom={0}
         />
-        <Text
-          color={
-            hour.temp < 10 ? "#0BC5EA" : hour.temp < 20 ? "#ffba08" : "#fe7f2d"
-          }
-          fontSize={20}
-        >
-          {hour.temp}
-          {`\u00B0C`}
-        </Text>
+        <VStack>
+          <Text
+            color={
+              hour.temp < 10
+                ? "#0BC5EA"
+                : hour.temp < 20
+                ? "#ffba08"
+                : "#fe7f2d"
+            }
+            fontSize={20}
+            fontWeight={700}
+          >
+            {hour.temp}
+            {`\u00B0C`}
+          </Text>
+          <Text fontSize={13}>{hour.weather[0].description}</Text>
+        </VStack>
       </HStack>
 
       <CardBody>
-        <Text>{hour.weather[0].description}</Text>
-        <Text>feels like: {hour.feels_like}</Text>
-        <Text>humidity: {hour.humidity}</Text>
-        <Text>wind speed: {hour.wind_speed}</Text>
+        <HStack justifyContent={"space-between"}>
+          <Text fontSize={14}>
+            feels like <br />{" "}
+            <b>
+              {hour.feels_like} {`\u00B0C`}
+            </b>
+          </Text>
+          <Text fontSize={14}>
+            wind speed
+            <br /> <b>{hour.wind_speed} m/s</b>
+          </Text>
+        </HStack>
+
+        <HStack justifyContent={"space-between"} marginTop={1}>
+          <Text fontSize={14}>
+            humidity <br /> <b>{hour.humidity} %</b>
+          </Text>
+          <Text fontSize={14}>
+            pressure <br /> <b>{hour.pressure} hPa</b>
+          </Text>
+        </HStack>
       </CardBody>
     </Card>
   );

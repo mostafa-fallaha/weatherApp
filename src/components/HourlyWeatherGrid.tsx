@@ -20,16 +20,16 @@ function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
 
   return (
     <Box marginTop={"1%"}>
-      <Text marginLeft={"5%"} fontSize={25}>
+      <Text marginLeft={"5%"} fontSize={25} fontWeight={800}>
         Next 12 hour Forecast
       </Text>
       <HStack marginLeft={"5%"}>
-        <Text color={"#f4acb7"}>
+        <Text color={"#f4acb7"} fontWeight={600}>
           {m < 10
             ? "sunrise: " + h + ":" + "0" + m + " am,"
             : "sunrise: " + h + ":" + m + " am, "}
         </Text>
-        <Text color={"#fcca46"}>
+        <Text color={"#fcca46"} fontWeight={600}>
           {m2 < 10
             ? "sunset: " + h2 + ":" + "0" + m2 + " pm"
             : "sunset: " + h2 + ":" + m2 + " pm"}
