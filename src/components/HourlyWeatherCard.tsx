@@ -14,7 +14,7 @@ function HourlyWeatherCard({ hour }: Props) {
     <Card
       width={220}
       textAlign={"center"}
-      height={240}
+      height={230}
       backgroundColor={"#3b779f"}
     >
       <Text>

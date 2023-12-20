@@ -1,9 +1,9 @@
-import { Box, HStack, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import backimg from "../public/blue.jpg";
 import "./App.css";
 import HourlyWeatherContainer from "./components/HourlyWeatherContainer";
-import SearchTimeZone from "./components/SearchTimeZone";
+import NavBar from "./components/NavBAR";
 import TimeZoneTitle from "./components/TimeZoneTitle";
 
 function App() {
@@ -18,17 +18,8 @@ function App() {
         justifyContent="center"
         alignItems="center"
       >
-        <HStack justifyContent={"space-evenly"}>
-          <Image
-            src="https://openweathermap.org/img/wn/02d@2x.png"
-            width={100}
-          />
-          <SearchTimeZone onSearch={(str) => setCity(str)} />
-          <Image
-            src="https://openweathermap.org/img/wn/11d@2x.png"
-            width={100}
-          />
-        </HStack>
+        <NavBar onSearch={(str) => setCity(str)} />
+
         <TimeZoneTitle cityName={city} />
         <HourlyWeatherContainer city={city} />
       </Box>

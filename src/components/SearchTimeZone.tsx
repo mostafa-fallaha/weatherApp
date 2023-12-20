@@ -20,7 +20,7 @@ function SearchTimeZone({ onSearch }: Props) {
         <Input
           ref={ref}
           borderRadius={20}
-          placeholder="enter a city name"
+          placeholder="enter a city name, ex: London, Paris, Berlin..."
           variant="filled"
           borderColor={"#63B3ED"}
         />
