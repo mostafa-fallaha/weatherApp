@@ -3,7 +3,7 @@ import { useState } from "react";
 import backimg from "../public/blue.jpg";
 import "./App.css";
 import HourlyWeatherContainer from "./components/HourlyWeatherContainer";
-import NavBar from "./components/NavBAR";
+import NavBar from "./components/NavBar";
 import TimeZoneTitle from "./components/TimeZoneTitle";
 
 function App() {
@@ -20,10 +20,12 @@ function App() {
       <Grid
         templateAreas={{
           base: `"nav" "main"`,
+          sm: `"nav" "main"`,
           lg: `"nav" "main"`,
         }}
         templateColumns={{
           base: "1fr",
+          sm: "1fr",
           lg: "1fr",
         }}
       >
@@ -32,8 +34,15 @@ function App() {
         </GridItem>
 
         <Show above="lg">
+          <GridItem area="main">
+            <TimeZoneTitle cityName={city} />
+            <HourlyWeatherContainer city={city} />
+          </GridItem>
+        </Show>
+
+        <Show below="sm">
           <TimeZoneTitle cityName={city} />
-          <HourlyWeatherContainer city={city} />
+          <div>base</div>
         </Show>
       </Grid>
     </Box>
