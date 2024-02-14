@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Show, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import backimg from "../public/blue.jpg";
 import "./App.css";
@@ -42,7 +42,7 @@ function App() {
 
         <Show below="sm">
           <TimeZoneTitle cityName={city} />
-          <div>base</div>
+          <Text>we're working on it</Text>
         </Show>
       </Grid>
     </Box>
