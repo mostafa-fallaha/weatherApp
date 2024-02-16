@@ -15,7 +15,8 @@ function HourlyWeatherCard({ hour }: Props) {
       width={220}
       textAlign={"center"}
       height={230}
-      backgroundColor={"#3b779f"}
+      backgroundColor={"none"}
+      border={"1px solid #3b779f"}
     >
       <Text fontWeight={800}>
         {hourIndex === 0 ? 12 : hourIndex > 12 ? hourIndex - 12 : hourIndex}
@@ -33,7 +34,7 @@ function HourlyWeatherCard({ hour }: Props) {
           <Text
             color={
               hour.temp < 10
-                ? "#0BC5EA"
+                ? "#0096c7"
                 : hour.temp < 20
                 ? "#ffba08"
                 : "#fe7f2d"

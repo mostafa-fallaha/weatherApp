@@ -1,6 +1,5 @@
 import { Box, Grid, GridItem, Show, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import backimg from "../public/blue.jpg";
 import "./App.css";
 import HourlyWeatherContainer from "./components/HourlyWeatherContainer";
 import NavBar from "./components/NavBar";
@@ -10,10 +9,11 @@ function App() {
   const [city, setCity] = useState("Nabatieh");
   return (
     <Box
-      backgroundImage={backimg}
-      backgroundSize="cover"
-      backgroundPosition="center"
-      height="100vh"
+      // backgroundImage={backimg}
+      // backgroundSize="cover"
+      // backgroundPosition="center"
+      // backgroundColor={"#1d3557"}
+      height="100lvh"
       justifyContent="center"
       alignItems="center"
     >
