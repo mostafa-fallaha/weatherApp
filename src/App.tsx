@@ -1,10 +1,11 @@
 import { Box, Grid, GridItem, Show, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
-import HourlyWeatherContainer from "./components/Hourly/HourlyWeatherContainer";
+import ContainerAll from "./components/ContainerAll";
 import NavBar from "./components/NavBar";
 import TimeZoneTitle from "./components/TimeZoneTitle";
-import DailyContainer from "./components/Daily/DailyContainer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DayDetails from "./components/Daily/DayDetails";
 
 function App() {
   const [city, setCity] = useState("Nabatieh");
@@ -36,9 +37,12 @@ function App() {
 
         <Show above="lg">
           <GridItem area="main">
-            <TimeZoneTitle cityName={city} />
-            <HourlyWeatherContainer city={city} />
-            <DailyContainer city={city} />
+            <BrowserRouter>
+              <Routes>
+                <Route path="" element={<ContainerAll city={city} />} />
+                <Route path="/day-details" element={<DayDetails />} />
+              </Routes>
+            </BrowserRouter>
           </GridItem>
         </Show>
 

@@ -1,4 +1,5 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { Daily } from "../../hooks/useGeoCode";
 import DailyCard from "./DailyCard";
 
@@ -14,7 +15,9 @@ function DailyGrid({ daily_forecast }: Props) {
       </Text>
       <HStack marginTop={"1%"} justifyContent={"center"}>
         {daily_forecast.slice(1).map((day) => (
-          <DailyCard day={day} key={day.dt} />
+          <Link to="/day-details" state={{ day: day }} key={day.dt}>
+            <DailyCard day={day} />
+          </Link>
         ))}
       </HStack>
     </Box>
