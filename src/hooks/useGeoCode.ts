@@ -100,8 +100,6 @@ const useGeoCode = (city: string) => {
         const date = new Date(res.data.current.sunrise * 1000);
         let h = date.getHours();
         h = h > 12 ? h - 12 : h;
-        const m = date.getMinutes();
-        console.log(h + ":" + m);
 
         const newCurrent: Current = res.data.current;
         newCurrent.sunriseDate = convert.UnixToDate(newCurrent.sunrise * 1000);
