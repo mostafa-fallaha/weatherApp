@@ -44,7 +44,7 @@ export interface Hourly {
   weather: Weather[];
 }
 
-interface Daily {
+export interface Daily {
   dt: number;
   sunrise: number;
   sunriseDate: string;

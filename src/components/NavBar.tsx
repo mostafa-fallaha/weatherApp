@@ -1,6 +1,6 @@
 import { HStack, Image, Box } from "@chakra-ui/react";
 import SearchTimeZone from "./SearchTimeZone";
-import ColorSwitch from "./ColorSwitch";
+import ColorSwitch from "./Hourly/ColorSwitch";
 
 interface Props {
   onSearch: (searchText: string) => void;

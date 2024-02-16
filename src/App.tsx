@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, Show, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "./App.css";
-import HourlyWeatherContainer from "./components/HourlyWeatherContainer";
+import HourlyWeatherContainer from "./components/Hourly/HourlyWeatherContainer";
 import NavBar from "./components/NavBar";
 import TimeZoneTitle from "./components/TimeZoneTitle";
 

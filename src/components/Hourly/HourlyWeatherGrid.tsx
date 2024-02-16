@@ -1,6 +1,6 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
 import HourlyWeatherCard from "./HourlyWeatherCard";
-import { Current, Hourly } from "../hooks/useGeoCode";
+import { Current, Hourly } from "../../hooks/useGeoCode";
 
 interface Props {
   hourly_forecast: Hourly[];

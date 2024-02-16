@@ -1,4 +1,4 @@
-import useGeoCode from "../hooks/useGeoCode";
+import useGeoCode from "../../hooks/useGeoCode";
 import HourlyWeatherGrid from "./HourlyWeatherGrid";
 import HourlyWeatherSkeletons from "./HourlyWeatherSkeletons";
 

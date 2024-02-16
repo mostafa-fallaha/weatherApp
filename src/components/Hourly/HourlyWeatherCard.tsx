@@ -1,6 +1,6 @@
 import { Card, CardBody, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import { Hourly } from "../hooks/useGeoCode";
-import getWeatherIcon from "../services/get-weather-icon";
+import { Hourly } from "../../hooks/useGeoCode";
+import getWeatherIcon from "../../services/get-weather-icon";
 
 interface Props {
   hour: Hourly;
