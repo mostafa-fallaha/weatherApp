@@ -5,7 +5,7 @@ function HourlyWeatherSkeleton() {
     <Card
       width={220}
       height={230}
-      backgroundColor={"#1d3557"}
+      backgroundColor={"#0d1b2a"}
       border={"1px solid #3b779f"}
     >
       <Skeleton />
