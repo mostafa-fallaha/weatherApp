@@ -104,8 +104,8 @@ const useGeoCode = (city: string) => {
         console.log(h + ":" + m);
 
         const newCurrent: Current = res.data.current;
-        newCurrent.sunriseDate = convert.UnixToDate(newCurrent.sunrise);
-        newCurrent.sunsetDate = convert.UnixToDate(newCurrent.sunset);
+        newCurrent.sunriseDate = convert.UnixToDate(newCurrent.sunrise * 1000);
+        newCurrent.sunsetDate = convert.UnixToDate(newCurrent.sunset * 1000);
         setCurrent(newCurrent);
 
         const newDaily: Daily[] = res.data.daily;
