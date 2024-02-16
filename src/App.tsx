@@ -4,6 +4,7 @@ import "./App.css";
 import HourlyWeatherContainer from "./components/Hourly/HourlyWeatherContainer";
 import NavBar from "./components/NavBar";
 import TimeZoneTitle from "./components/TimeZoneTitle";
+import DailyContainer from "./components/Daily/DailyContainer";
 
 function App() {
   const [city, setCity] = useState("Nabatieh");
@@ -37,6 +38,7 @@ function App() {
           <GridItem area="main">
             <TimeZoneTitle cityName={city} />
             <HourlyWeatherContainer city={city} />
+            <DailyContainer city={city} />
           </GridItem>
         </Show>
 

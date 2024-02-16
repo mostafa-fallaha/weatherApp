@@ -110,8 +110,8 @@ const useGeoCode = (city: string) => {
 
         const newDaily: Daily[] = res.data.daily;
         newDaily.map((n) => {
-          n.sunriseDate = convert.UnixToDate(n.sunrise);
-          n.sunsetDate = convert.UnixToDate(n.sunset);
+          n.sunriseDate = convert.UnixToDate(n.sunrise * 1000);
+          n.sunsetDate = convert.UnixToDate(n.sunset * 1000);
         });
         setDailyForecast(newDaily);
 
