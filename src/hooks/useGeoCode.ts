@@ -38,9 +38,11 @@ export interface Hourly {
   temp: number;
   feels_like: number;
   pressure: number;
+  uvi: number;
   humidity: number;
   wind_speed: number;
   wind_deg: number;
+  pop: number;
   weather: Weather[];
 }
 
