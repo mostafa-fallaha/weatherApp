@@ -35,7 +35,7 @@ function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
         ))}
       </div> */}
       <Box
-        width="1217px"
+        width="900px"
         overflowX="auto"
         height="460px"
         marginLeft="4%"

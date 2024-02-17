@@ -26,7 +26,7 @@ function HourlyWeatherCard({ hour }: Props) {
 
   return (
     <Box
-      width="1200px"
+      width="883px"
       height={expanded ? "100px" : "60px"}
       backgroundColor="none"
       border="1px solid #3b7094"
