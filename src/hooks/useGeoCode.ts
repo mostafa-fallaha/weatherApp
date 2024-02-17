@@ -41,9 +41,16 @@ export interface Hourly {
   uvi: number;
   humidity: number;
   wind_speed: number;
-  wind_deg: number;
   pop: number;
   weather: Weather[];
+}
+
+interface Alert {
+  sender_name: string;
+  event: string;
+  start: number;
+  end: number;
+  description: string;
 }
 
 export interface Daily {
@@ -61,6 +68,9 @@ export interface Daily {
   weather: Weather[];
   clouds: number;
   rain: number;
+  pop: number;
+  uvi: number;
+  alerts: Alert[];
 }
 
 interface AllData {

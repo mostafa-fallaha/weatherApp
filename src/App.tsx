@@ -10,15 +10,7 @@ import DayDetails from "./components/Daily/DayDetails";
 function App() {
   const [city, setCity] = useState("Nabatieh");
   return (
-    <Box
-      // backgroundImage={backimg}
-      // backgroundSize="cover"
-      // backgroundPosition="center"
-      // backgroundColor={"#1d3557"}
-      height="100lvh"
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Box height="100lvh" justifyContent="center" alignItems="center">
       <Grid
         templateAreas={{
           base: `"nav" "main"`,
@@ -37,6 +29,7 @@ function App() {
 
         <Show above="lg">
           <GridItem area="main">
+            <TimeZoneTitle cityName={city} />
             <BrowserRouter>
               <Routes>
                 <Route path="" element={<ContainerAll city={city} />} />

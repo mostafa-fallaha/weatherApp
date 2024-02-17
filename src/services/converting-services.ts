@@ -29,4 +29,20 @@ export class ConvertingServices {
     const currDate = parseInt(str);
     return currDate;
   }
+
+  UnixToDayName(unixTime: number) {
+    return unixTime == 0
+      ? "Sunday"
+      : unixTime == 1
+      ? "Monday"
+      : unixTime == 2
+      ? "Tuesday"
+      : unixTime == 3
+      ? "Wednesday"
+      : unixTime == 4
+      ? "Thursday"
+      : unixTime == 5
+      ? "Friday"
+      : "Saturday";
+  }
 }

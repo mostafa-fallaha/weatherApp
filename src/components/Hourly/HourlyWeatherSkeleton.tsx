@@ -1,18 +1,11 @@
-import { Card, CardBody, Skeleton, SkeletonText } from "@chakra-ui/react";
+import { Box, Skeleton, SkeletonText } from "@chakra-ui/react";
 
 function HourlyWeatherSkeleton() {
   return (
-    <Card
-      width={220}
-      height={230}
-      backgroundColor={"#0d1b2a"}
-      border={"1px solid #3b779f"}
-    >
+    <Box height="10vh" backgroundColor="none" borderBottom="1px solid #3b7094">
       <Skeleton />
-      <CardBody>
-        <SkeletonText />
-      </CardBody>
-    </Card>
+      <SkeletonText marginTop={5} />
+    </Box>
   );
 }
 

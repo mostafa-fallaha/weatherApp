@@ -26,10 +26,9 @@ function HourlyWeatherCard({ hour }: Props) {
 
   return (
     <Box
-      width="883px"
-      height={expanded ? "100px" : "60px"}
+      height={expanded ? "20vh" : "10vh"}
       backgroundColor="none"
-      border="1px solid #3b7094"
+      borderBottom="1px solid #3b7094"
       display="flex"
       flexWrap={"wrap"}
       onClick={handleClick}
@@ -38,7 +37,7 @@ function HourlyWeatherCard({ hour }: Props) {
     >
       {/* ====================== Before Expanding =========================================================== */}
 
-      <Box display="flex" width="10000px">
+      <Box display="flex">
         <Text
           fontWeight={800}
           marginLeft={5}
@@ -58,7 +57,7 @@ function HourlyWeatherCard({ hour }: Props) {
         />
 
         <Box marginTop={5} display="flex">
-          <Text fontSize={16} width="160px" marginLeft={1}>
+          <Text fontSize={16} width="200px" marginLeft={1}>
             {hour.weather[0].description}
           </Text>
 
@@ -67,21 +66,24 @@ function HourlyWeatherCard({ hour }: Props) {
             {`\u00B0C`}
           </Text>
 
-          <Image src="./src/assets/drops.png" width="20px" height="20px" />
-          <Text width="90px" marginLeft={2}>
+          <abbr title="chance of rain">
+            <Image src="./src/assets/drops.png" width="20px" height="20px" />
+          </abbr>
+          <Text width="100px" marginLeft={2}>
             {(hour.pop * 100).toFixed(0)}%
           </Text>
 
-          <Box marginTop={1}>
+          <abbr title="wind speed" style={{ marginTop: "0.6%" }}>
             <TbWind />
-          </Box>
-          <Text marginLeft={2} width="115px">
+          </abbr>
+
+          <Text marginLeft={2} width="130px">
             <b>{(hour.wind_speed * 3.6).toFixed(1)}</b> km/h
           </Text>
 
-          <Box marginTop={1}>
+          <abbr title="UV index" style={{ marginTop: "0.65%" }}>
             <IoSunnyOutline />
-          </Box>
+          </abbr>
           <Text width="60px" marginLeft={1}>
             {hour.uvi.toFixed(0)}
           </Text>
@@ -90,7 +92,7 @@ function HourlyWeatherCard({ hour }: Props) {
 
       {/* ====================== After Expanding =========================================================== */}
 
-      <Box display={contentVisible ? "flex" : "none"} marginLeft="29.5%">
+      <Box display={contentVisible ? "flex" : "none"} marginLeft="42%">
         <Text>
           humidity: <b>{hour.humidity} </b>%
         </Text>
