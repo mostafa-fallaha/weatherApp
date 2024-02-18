@@ -6,11 +6,12 @@ import { BsSunriseFill, BsSunsetFill } from "react-icons/bs";
 interface Props {
   hourly_forecast: Hourly[];
   current: Current;
+  widH: number;
 }
 
-function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
+function HourlyWeatherGrid({ hourly_forecast, current, widH }: Props) {
   return (
-    <Box marginTop={"1%"} width="60%">
+    <Box marginTop={"1%"} width={widH + "%"}>
       <Text fontSize={25} fontWeight={800} width="70vh">
         Next 12 hour Forecast
       </Text>
