@@ -1,6 +1,6 @@
-import { Text } from "@chakra-ui/react";
 import useGeoCode from "../../hooks/useGeoCode";
 import DailyGrid from "./DailyGrid";
+import DailySkeletons from "./DailySkeletons";
 
 interface Props {
   city: string;
@@ -8,12 +8,7 @@ interface Props {
 
 function DailyContainer({ city }: Props) {
   const { dailyForecast, isLoading } = useGeoCode(city);
-  if (isLoading || !dailyForecast)
-    return (
-      <Text marginLeft={20} marginTop={5}>
-        Loading...
-      </Text>
-    );
+  if (isLoading || !dailyForecast) return <DailySkeletons />;
   return (
     <div>
       <DailyGrid daily_forecast={dailyForecast} />
