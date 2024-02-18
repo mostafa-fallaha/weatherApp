@@ -61,6 +61,10 @@ export interface Daily {
   sunsetDate: string;
   summary: string;
   temp: Temperature;
+  feels_like: {
+    day: number;
+    night: number;
+  };
   pressure: number;
   humidity: number;
   wind_speed: number;
@@ -114,14 +118,14 @@ const useGeoCode = (city: string) => {
         h = h > 12 ? h - 12 : h;
 
         const newCurrent: Current = res.data.current;
-        newCurrent.sunriseDate = convert.UnixToDate(newCurrent.sunrise * 1000);
-        newCurrent.sunsetDate = convert.UnixToDate(newCurrent.sunset * 1000);
+        newCurrent.sunriseDate = convert.UnixToHours(newCurrent.sunrise * 1000);
+        newCurrent.sunsetDate = convert.UnixToHours(newCurrent.sunset * 1000);
         setCurrent(newCurrent);
 
         const newDaily: Daily[] = res.data.daily;
         newDaily.map((n) => {
-          n.sunriseDate = convert.UnixToDate(n.sunrise * 1000);
-          n.sunsetDate = convert.UnixToDate(n.sunset * 1000);
+          n.sunriseDate = convert.UnixToHours(n.sunrise * 1000);
+          n.sunsetDate = convert.UnixToHours(n.sunset * 1000);
         });
         setDailyForecast(newDaily);
 

@@ -21,19 +21,6 @@ function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
           {"sunset: " + current.sunsetDate + " pm"}
         </Text>
       </HStack>
-      {/* <div
-        style={{
-          overflowX: "auto",
-          height: "460px",
-          marginLeft: "4%",
-          marginTop: "1%",
-          backgroundColor: "#00121c",
-        }}
-      >
-        {hourly_forecast.slice(0, 12).map((hour) => (
-          <HourlyWeatherCard hour={hour} key={hour.weather[0].id + hour.dt} />
-        ))}
-      </div> */}
       <Box
         width="65%"
         overflowX="auto"
