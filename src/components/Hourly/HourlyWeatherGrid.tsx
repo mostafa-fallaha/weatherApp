@@ -1,6 +1,7 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
 import HourlyWeatherCard from "./HourlyWeatherCard";
 import { Current, Hourly } from "../../hooks/useGeoCode";
+import { BsSunriseFill, BsSunsetFill } from "react-icons/bs";
 
 interface Props {
   hourly_forecast: Hourly[];
@@ -9,23 +10,28 @@ interface Props {
 
 function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
   return (
-    <Box marginTop={"1%"}>
-      <Text marginLeft={"5%"} fontSize={25} fontWeight={800}>
+    <Box marginTop={"1%"} width="60%">
+      <Text fontSize={25} fontWeight={800} width="70vh">
         Next 12 hour Forecast
       </Text>
-      <HStack marginLeft={"5%"}>
-        <Text color={"#f4acb7"} fontWeight={600}>
-          {"sunrise: " + current.sunriseDate + " am,"}
+      <HStack width="70vh">
+        <abbr title="sunrise">
+          <BsSunriseFill />
+        </abbr>
+        <Text color={"#f4acb7"} fontWeight={600} marginRight="0.5%">
+          {current.sunriseDate + " am,"}
         </Text>
+        <abbr title="sunset">
+          <BsSunsetFill />
+        </abbr>
         <Text color={"#fcca46"} fontWeight={600}>
-          {"sunset: " + current.sunsetDate + " pm"}
+          {current.sunsetDate + " pm"}
         </Text>
       </HStack>
       <Box
-        width="65%"
+        // width="65%"
         overflowX="auto"
         height="60svh"
-        marginLeft="4%"
         marginTop="1%"
         border="1px solid #81aeca"
       >

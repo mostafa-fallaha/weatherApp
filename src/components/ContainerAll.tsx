@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import DailyContainer from "./Daily/DailyContainer";
 import HourlyWeatherContainer from "./Hourly/HourlyWeatherContainer";
 interface Props {
@@ -5,10 +6,10 @@ interface Props {
 }
 function ContainerAll({ city }: Props) {
   return (
-    <div>
+    <Box display={"flex"} justifyContent="space-evenly">
       <HourlyWeatherContainer city={city} />
       <DailyContainer city={city} />
-    </div>
+    </Box>
   );
 }
 

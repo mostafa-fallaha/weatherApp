@@ -1,7 +1,7 @@
-import { Card, CardBody, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Card, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { Daily } from "../../hooks/useGeoCode";
-import getWeatherIcon from "../../services/get-weather-icon";
 import { ConvertingServices } from "../../services/converting-services";
+import getWeatherIcon from "../../services/get-weather-icon";
 interface Props {
   day: Daily;
 }
@@ -12,15 +12,15 @@ function DailyCard({ day }: Props) {
 
   return (
     <Card
-      width={190}
+      width="22vh"
       textAlign={"center"}
-      height={220}
+      height="20vh"
       backgroundColor={"none"}
       border={"1px solid #81aeca"}
-      _hover={{ width: "200px" }}
+      _hover={{ width: "23vh" }}
       transition="0.5s"
     >
-      <Text fontWeight={700} fontSize={20}>
+      <Text fontWeight={700} fontSize="1.5em">
         {convert.UnixToDayName(d)}
       </Text>
       <HStack justifyContent={"space-evenly"} marginTop={2}>
@@ -30,20 +30,20 @@ function DailyCard({ day }: Props) {
           alignSelf={"center"}
         />
         <VStack>
-          <Text fontSize={20} fontWeight={700}>
+          <Text fontSize="1em" fontWeight={700}>
             {day.temp.day.toFixed(1)}
             {`\u00B0C`}
           </Text>
           <Text fontSize={13}>{day.weather[0].description}</Text>
         </VStack>
       </HStack>
-      <CardBody>
+      {/* <CardBody>
         <HStack>
           <Text fontSize={14} fontWeight={500}>
             {day.summary}
           </Text>
         </HStack>
-      </CardBody>
+      </CardBody> */}
     </Card>
   );
 }
