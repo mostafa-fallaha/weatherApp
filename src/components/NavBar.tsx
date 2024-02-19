@@ -8,8 +8,11 @@ interface Props {
 
 function NavBAR({ onSearch }: Props) {
   return (
-    <HStack padding={"10px"}>
-      <Image src="https://openweathermap.org/img/wn/02d@2x.png" width={100} />
+    <HStack padding={"10px"} width={"100%"}>
+      <Image
+        src="https://openweathermap.org/img/wn/02d@2x.png"
+        width={{ base: "50px", lg: 100 }}
+      />
       <Box flex={1}>
         <SearchTimeZone onSearch={onSearch} />
       </Box>

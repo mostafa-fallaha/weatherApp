@@ -20,6 +20,14 @@ const theme = extendTheme({
       900: "#00101a",
     },
   },
+  breakpoints: {
+    base: "300px",
+    sm: "400px",
+    md: "760px",
+    lg: "1400px",
+    xl: "1600px",
+    "2xl": "1800px",
+  },
 });
 
 export default theme;

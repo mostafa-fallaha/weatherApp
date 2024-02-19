@@ -12,38 +12,34 @@ function DailyCard({ day }: Props) {
 
   return (
     <Card
-      width="22vh"
+      width={{ base: "15vh", lg: "22vh" }}
       textAlign={"center"}
-      height="20vh"
+      height={{ base: "14svh", lg: "20svh" }}
       backgroundColor={"none"}
       border={"1px solid #81aeca"}
       _hover={{ width: "23vh" }}
       transition="0.5s"
+      padding={{ base: "2%" }}
     >
-      <Text fontWeight={700} fontSize="1.5em">
+      <Text fontWeight={700} fontSize={{ base: 10, md: 18, lg: "1.5rem" }}>
         {convert.UnixToDayName(d)}
       </Text>
       <HStack justifyContent={"space-evenly"} marginTop={2}>
         <Image
           src={getWeatherIcon(day.weather[0].icon)}
-          width={75}
+          width={{ base: "40px", md: "50px", lg: 75 }}
           alignSelf={"center"}
         />
         <VStack>
-          <Text fontSize="1em" fontWeight={700}>
+          <Text fontSize={{ base: 10, md: 18, lg: "1rem" }} fontWeight={700}>
             {day.temp.day.toFixed(1)}
             {`\u00B0C`}
           </Text>
-          <Text fontSize={13}>{day.weather[0].description}</Text>
+          <Text fontSize={{ base: 10, md: 18, lg: 13 }}>
+            {day.weather[0].description}
+          </Text>
         </VStack>
       </HStack>
-      {/* <CardBody>
-        <HStack>
-          <Text fontSize={14} fontWeight={500}>
-            {day.summary}
-          </Text>
-        </HStack>
-      </CardBody> */}
     </Card>
   );
 }

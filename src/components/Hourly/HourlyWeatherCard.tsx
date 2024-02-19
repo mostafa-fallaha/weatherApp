@@ -40,10 +40,11 @@ function HourlyWeatherCard({ hour }: Props) {
       <Box display="flex">
         <Text
           fontWeight={800}
-          marginLeft={5}
-          fontSize={18}
+          marginLeft={{ base: 1, md: 5 }}
+          fontSize={{ base: 9, md: 18 }}
           marginTop={5}
-          width="100px"
+          width={{ base: "30px", md: "90px", lg: "100px" }}
+          height={{ base: "25px" }}
         >
           {hourIndex === 0 ? 12 : hourIndex > 12 ? hourIndex - 12 : hourIndex}
           {hourIndex < 12 ? " am" : " pm"}
@@ -52,39 +53,66 @@ function HourlyWeatherCard({ hour }: Props) {
         <Image
           src={getWeatherIcon(hour.weather[0].icon)}
           key={hour.weather[0].id}
-          width="70px"
-          height="70px"
+          width={{ base: "25px", md: "50px", lg: "70px" }}
+          height={{ base: "25px", md: "50px", lg: "70px" }}
+          marginTop={{ base: "4.5%", lg: "0%" }}
         />
 
         <Box marginTop={5} display="flex">
-          <Text fontSize={16} width="200px" marginLeft={1}>
+          <Text
+            fontSize={{ base: 9, md: 18 }}
+            height={{ base: "25px" }}
+            width={{ base: "50px", md: "120px", lg: "200px" }}
+            marginLeft={1}
+          >
             {hour.weather[0].description}
           </Text>
 
-          <Text fontWeight={700} width="130px">
+          <Text
+            fontSize={{ base: 9, md: 18 }}
+            height={{ base: "25px" }}
+            fontWeight={700}
+            width={{ base: "37px", md: "70px", lg: "120px" }}
+          >
             {hour.temp.toFixed(1)}
             {`\u00B0C`}
           </Text>
 
-          <abbr title="chance of rain">
-            <Image src="./src/assets/drops.png" width="20px" height="20px" />
-          </abbr>
-          <Text width="100px" marginLeft={2}>
+          <Image
+            src="./src/assets/drops.png"
+            width={{ base: "15px", md: "20px", lg: "25px" }}
+            height={{ base: "15px", md: "20px", lg: "25px" }}
+          />
+
+          <Text
+            fontSize={{ base: 10, md: 18 }}
+            height={{ base: "25px" }}
+            width={{ base: "25px", md: "70px", lg: "90px" }}
+            marginLeft={2}
+          >
             {(hour.pop * 100).toFixed(0)}%
           </Text>
 
-          <abbr title="wind speed" style={{ marginTop: "0.6%" }}>
+          <Box marginTop={{ base: "0%", lg: "0.7%" }}>
             <TbWind />
-          </abbr>
-
-          <Text marginLeft={2} width="130px">
+          </Box>
+          <Text
+            marginLeft={{ base: 1, lg: 2 }}
+            fontSize={{ base: 9, md: 18 }}
+            height={{ base: "25px" }}
+            width={{ base: "50px", md: "120px" }}
+          >
             <b>{(hour.wind_speed * 3.6).toFixed(1)}</b> km/h
           </Text>
-
-          <abbr title="UV index" style={{ marginTop: "0.65%" }}>
+          <Box marginTop={{ base: "0%", lg: "0.7%" }}>
             <IoSunnyOutline />
-          </abbr>
-          <Text width="60px" marginLeft={1}>
+          </Box>
+          <Text
+            fontSize={{ base: 10, md: 18 }}
+            height={{ base: "25px" }}
+            width={{ base: "10px", md: "30px" }}
+            marginLeft={1}
+          >
             {hour.uvi.toFixed(0)}
           </Text>
         </Box>
@@ -92,82 +120,36 @@ function HourlyWeatherCard({ hour }: Props) {
 
       {/* ====================== After Expanding =========================================================== */}
 
-      <Box display={contentVisible ? "flex" : "none"} marginLeft="42%">
-        <Text>
+      <Box
+        display={contentVisible ? "flex" : "none"}
+        marginLeft={{ base: "8%", lg: "46%" }}
+      >
+        <Text
+          fontSize={{ base: 10, md: 18 }}
+          height={{ base: "25px" }}
+          width={{ base: "70px", md: "130px" }}
+        >
           humidity: <b>{hour.humidity} </b>%
         </Text>
-        <Text marginLeft={10}>
+        <Text
+          marginLeft={{ base: 2, lg: 10 }}
+          fontSize={{ base: 10, md: 18 }}
+          height={{ base: "25px" }}
+          width={{ base: "90px", md: "150px" }}
+        >
           pressure: <b>{hour.pressure}</b> mb
         </Text>
-        <Text marginLeft={10}>
+        {/* <Text
+          fontSize={{ base: 10, md: 18 }}
+          height={{ base: "25px" }}
+          width={{ base: "80px", md: "150px" }}
+          marginLeft={{ base: 2, lg: 10 }}
+        >
           feels like: <b>{hour.feels_like}</b>
           {`\u00B0C`}
-        </Text>
+        </Text> */}
       </Box>
     </Box>
-
-    // <Card
-    //   width={1200}
-    //   height={100}
-    //   backgroundColor={"none"}
-    //   border={"1px solid #3b779f"}
-    //   display={"inline-block"}
-    // >
-    //   <Text fontWeight={800}>
-    //     {hourIndex === 0 ? 12 : hourIndex > 12 ? hourIndex - 12 : hourIndex}
-    //     {hourIndex < 12 ? " am" : " pm"}
-    //   </Text>
-    //   <HStack justifyContent={"space-evenly"}>
-    //     <Image
-    //       src={getWeatherIcon(hour.weather[0].icon)}
-    //       key={hour.weather[0].id}
-    //       width={75}
-    //       alignSelf={"center"}
-    //       marginBottom={0}
-    //     />
-    //     <VStack>
-    //       <Text
-    //         color={
-    //           hour.temp < 10
-    //             ? "#0096c7"
-    //             : hour.temp < 20
-    //             ? "#ffba08"
-    //             : "#fe7f2d"
-    //         }
-    //         fontSize={20}
-    //         fontWeight={700}
-    //       >
-    //         {hour.temp}
-    //         {`\u00B0C`}
-    //       </Text>
-    //       <Text fontSize={13}>{hour.weather[0].description}</Text>
-    //     </VStack>
-    //   </HStack>
-
-    //   <CardBody>
-    //     <HStack justifyContent={"space-between"}>
-    //       <Text fontSize={14}>
-    //         feels like <br />{" "}
-    //         <b>
-    //           {hour.feels_like} {`\u00B0C`}
-    //         </b>
-    //       </Text>
-    //       <Text fontSize={14}>
-    //         wind speed
-    //         <br /> <b>{hour.wind_speed} m/s</b>
-    //       </Text>
-    //     </HStack>
-
-    //     <HStack justifyContent={"space-between"} marginTop={1}>
-    //       <Text fontSize={14}>
-    //         humidity <br /> <b>{hour.humidity} %</b>
-    //       </Text>
-    //       <Text fontSize={14}>
-    //         pressure <br /> <b>{hour.pressure} hPa</b>
-    //       </Text>
-    //     </HStack>
-    //   </CardBody>
-    // </Card>
   );
 }
 

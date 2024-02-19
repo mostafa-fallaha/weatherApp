@@ -12,8 +12,8 @@ function First({ cityName }: Props) {
   const location = place.slice(index + 1) + ", " + place.slice(0, index);
 
   return (
-    <HStack width={"100%"} justifyContent={"center"} alignContent={"center"}>
-      <Text fontSize={30} fontWeight={900}>
+    <HStack width={"100%"} justifyContent={"center"}>
+      <Text fontSize={{ base: 20, lg: 30 }} fontWeight={900}>
         {location}
       </Text>
     </HStack>

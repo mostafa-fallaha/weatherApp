@@ -5,21 +5,30 @@ import DailyCard from "./DailyCard";
 
 interface Props {
   daily_forecast: Daily[];
-  widD: number;
 }
 
-function DailyGrid({ daily_forecast, widD }: Props) {
+function DailyGrid({ daily_forecast }: Props) {
   return (
-    <Box marginTop={"5%"} marginBottom={"2%"}>
-      <Text fontSize={25} fontWeight={800} width={"50vh"}>
+    <Box
+      marginTop={{ base: "5%", md: "1%" }}
+      marginBottom={{ base: "5%" }}
+      width={{ base: "100%", lg: "30%" }}
+    >
+      <Text
+        fontSize={{ base: 15, lg: 25 }}
+        fontWeight={800}
+        width={{ base: "100%" }}
+        marginLeft={{ base: "3%", lg: "12%" }}
+      >
         Next 6 days Forecast
       </Text>
       <Box
         display="flex"
         marginTop={"6%"}
         flexWrap="wrap"
-        width={widD + "vh"}
         gap="1"
+        width={{ base: "100%" }}
+        justifyContent={{ base: "center" }}
       >
         {daily_forecast.slice(1, 7).map((day) => (
           <Link to="/day-details" state={{ day: day }} key={day.dt}>

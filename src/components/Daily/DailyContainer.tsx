@@ -4,17 +4,12 @@ import DailySkeletons from "./DailySkeletons";
 
 interface Props {
   city: string;
-  widD: number;
 }
 
-function DailyContainer({ city, widD }: Props) {
+function DailyContainer({ city }: Props) {
   const { dailyForecast, isLoading } = useGeoCode(city);
   if (isLoading || !dailyForecast) return <DailySkeletons />;
-  return (
-    <div>
-      <DailyGrid daily_forecast={dailyForecast} widD={widD} />
-    </div>
-  );
+  return <DailyGrid daily_forecast={dailyForecast} />;
 }
 
 export default DailyContainer;
