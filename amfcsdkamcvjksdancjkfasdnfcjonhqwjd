@@ -1,0 +1,209 @@
+[33mcommit eb89bdde9f5b89a9fcaf03eadc808842c7ea1d74[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Feb 18 19:14:53 2024 +0200
+
+    making it responsive - 1
+
+[33mcommit d4ec84f4a06b14810515a8d50b353ce660d80a25[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Feb 18 16:37:36 2024 +0200
+
+    editing the daily skeletons
+
+[33mcommit ac1e064654e036e24828a710adc9782e052d66a7[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Feb 18 16:18:09 2024 +0200
+
+    puting the days beside the hours
+
+[33mcommit f60c6f89ca66bd2d919443a19e6fc510a88f4eeb[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Feb 18 15:24:25 2024 +0200
+
+    making the DayDetails component
+
+[33mcommit 9ca53e4834d93943ae0ac0260b9c28979ef8d38a[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sat Feb 17 18:11:02 2024 +0200
+
+    tt
+
+[33mcommit be807f7dcd84c16d57e9f6422bd0d7d9a5087c5d[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sat Feb 17 18:10:28 2024 +0200
+
+    re-styling the hourly skeletons
+
+[33mcommit 90d8c918cffced0f6cd05dababdf79580758f871[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sat Feb 17 16:06:04 2024 +0200
+
+    re-styling the hourly forecast
+
+[33mcommit 47643f27c385a03f88dec3cd0538d6a051a11929[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 21:36:31 2024 +0200
+
+    passing the day object via Link-router
+
+[33mcommit 6957d75da722405634706bb609e6ae4a19e771aa[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 20:25:32 2024 +0200
+
+    building the daily card
+
+[33mcommit 2872a17711e70a1e88ce89ae97605b1884078560[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 11:25:06 2024 +0200
+
+    changing the chackra theme
+
+[33mcommit 21f6c46fd7f41d5cb7059d086a6d17e03d05f9b9[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 10:59:02 2024 +0200
+
+    date chamging
+
+[33mcommit 7b9843c1f865806b91725b6667b9be447187bf25[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 10:49:04 2024 +0200
+
+    editing the date converting service
+
+[33mcommit e0a135e1012c51853aef262c2419681353becb96[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 10:15:31 2024 +0200
+
+    changing colors
+
+[33mcommit 74183907794fc8940775c920340bfd2a36389915[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 10:13:31 2024 +0200
+
+    creating a Hourly sub-folder
+
+[33mcommit e5ad90223e5818a66e5291971809aed30206d898[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 10:06:10 2024 +0200
+
+    adding a dark mode button
+
+[33mcommit fd36989f623eb9a05931c0d7ec03123e78e593c5[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Fri Feb 16 10:00:32 2024 +0200
+
+    changing colors
+
+[33mcommit df36f4b9eac0fef1005b0fd13a90a417d0734128[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Wed Feb 14 13:39:09 2024 +0200
+
+    change 1 (Not important)
+
+[33mcommit 9484971e8cfc4a0dfb41983d9703d71c1ab76162[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Thu Dec 21 13:06:37 2023 +0200
+
+    some clean up in the App.
+
+[33mcommit fbd673482acef132668d43f8f3cac06a098df606[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Wed Dec 20 18:44:43 2023 +0200
+
+    font sizes and weight edit.
+
+[33mcommit 892418cfab6eadc0e5c8a29d5fd11931590c5a0a[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Wed Dec 20 14:17:16 2023 +0200
+
+    creating the navbar.
+
+[33mcommit 519d9e95dd313d6793be9e9b6d73bfc2213fc73e[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Wed Dec 20 12:43:35 2023 +0200
+
+    show the loading skeletons while searching.
+
+[33mcommit 09e08d8045b26361341b0e08110822634f34da31[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Wed Dec 20 12:39:51 2023 +0200
+
+    adding the sunrize and the sunset.
+
+[33mcommit 338a8893009c0f27bb1957d058ee8dbd8cd3f301[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Tue Dec 19 19:38:40 2023 +0200
+
+    styling the weather grid cards
+
+[33mcommit 27214df5ab2a3a1bb1ee60287c25cf3078e89256[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Tue Dec 19 19:13:48 2023 +0200
+
+    making the skeletons
+
+[33mcommit ec0328911bd42903118664d75fb1b28c87173db7[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Tue Dec 19 16:12:54 2023 +0200
+
+    putting logos to the header.
+
+[33mcommit 131ca8e50b8730f943bdd650275489b4f508b1ec[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Tue Dec 19 13:02:01 2023 +0200
+
+    addding the search input.
+
+[33mcommit f27356153fbc04daf8277c9b69e7948947bdf1d5[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Tue Dec 19 12:41:01 2023 +0200
+
+    getting the weather forecast data
+
+[33mcommit 04e541099a18647fc2832e778b5c7ad49e486361[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Tue Dec 19 10:12:21 2023 +0200
+
+    t1
+
+[33mcommit 68b36e42a90e1564bffd8a2b6293a1df1ff3d6e7[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Mon Dec 18 12:33:44 2023 +0200
+
+    installig chackraUI, and displaying the timezone
+
+[33mcommit 2a35bd395bb64870bad36c9a88a8c2944fc4390c[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Mon Dec 11 21:45:57 2023 +0200
+
+    getting the weather of a specific city.
+
+[33mcommit 510f056b2c2c0ad58d0f2ac2db9eb2f25c7c51fa[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Mon Dec 11 12:47:27 2023 +0200
+
+    converting city names to lat and lon with geocode.
+
+[33mcommit da0e343f8cc5210a17d99862a79572a74e609298[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Dec 10 12:55:35 2023 +0200
+
+    testing gitignore
+
+[33mcommit 1643601463a26d6f8823ddffc91f9ae608cbc644[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Dec 10 12:54:29 2023 +0200
+
+    ignoring readme.md
+
+[33mcommit 1618df918f882b495d3baba031d0f76182f2fb9b[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Dec 10 12:46:32 2023 +0200
+
+    test1
+
+[33mcommit f807990296e2c382c8a4d6698462134634456756[m
+Author: mostafa <moostafafallaha@gmail.com>
+Date:   Sun Dec 10 11:12:38 2023 +0200
+
+    Initial commit.
