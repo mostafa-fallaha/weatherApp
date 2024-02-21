@@ -18,7 +18,7 @@ function DailyGrid({ daily_forecast }: Props) {
         fontSize={{ base: 15, lg: 25 }}
         fontWeight={800}
         width={{ base: "100%" }}
-        marginLeft={{ base: "3%", lg: "12%" }}
+        marginLeft={{ base: "3%", sm: "10%", sm2: "10%", lg: "12%" }}
       >
         Next 6 days Forecast
       </Text>
@@ -28,7 +28,7 @@ function DailyGrid({ daily_forecast }: Props) {
         flexWrap="wrap"
         gap="1"
         width={{ base: "100%" }}
-        justifyContent={{ base: "center" }}
+        justifyContent={{ base: "flex-start" }}
       >
         {daily_forecast.slice(1, 7).map((day) => (
           <Link to="/day-details" state={{ day: day }} key={day.dt}>
