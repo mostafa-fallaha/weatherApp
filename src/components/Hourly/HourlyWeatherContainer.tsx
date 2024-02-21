@@ -4,10 +4,9 @@ import HourlyWeatherSkeletons from "./HourlyWeatherSkeletons";
 
 interface Props {
   city: string;
-  widH: number;
 }
 
-function HourlyWeatherContainer({ city, widH }: Props) {
+function HourlyWeatherContainer({ city }: Props) {
   const { hourlyForecast, current, isLoading } = useGeoCode(city);
 
   if (isLoading) return <HourlyWeatherSkeletons />;
@@ -15,11 +14,7 @@ function HourlyWeatherContainer({ city, widH }: Props) {
   if (!hourlyForecast || !current) return <HourlyWeatherSkeletons />;
 
   return (
-    <HourlyWeatherGrid
-      hourly_forecast={hourlyForecast}
-      current={current}
-      widH={widH}
-    />
+    <HourlyWeatherGrid hourly_forecast={hourlyForecast} current={current} />
   );
 }
 

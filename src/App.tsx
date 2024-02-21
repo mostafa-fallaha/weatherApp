@@ -32,10 +32,7 @@ function App() {
             <TimeZoneTitle cityName={city} />
             <BrowserRouter>
               <Routes>
-                <Route
-                  path=""
-                  element={<ContainerAll city={city} widH={60} widD={50} />}
-                />
+                <Route path="" element={<ContainerAll city={city} />} />
                 <Route path="/day-details" element={<DayDetails />} />
               </Routes>
             </BrowserRouter>
@@ -47,10 +44,7 @@ function App() {
             <TimeZoneTitle cityName={city} />
             <BrowserRouter>
               <Routes>
-                <Route
-                  path=""
-                  element={<ContainerAll city={city} widH={100} widD={80} />}
-                />
+                <Route path="" element={<ContainerAll city={city} />} />
                 <Route path="/day-details" element={<DayDetails />} />
               </Routes>
             </BrowserRouter>
