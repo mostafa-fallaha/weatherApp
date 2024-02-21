@@ -97,7 +97,7 @@ function HourlyWeatherCard({ hour }: Props) {
           </Text>
 
           <Image
-            src="./src/assets/drops.png"
+            src="./drops.png"
             width={{ base: "15px", sm: "17px", md: "20px", lg: "25px" }}
             height={{ base: "15px", sm: "17px", md: "20px", lg: "25px" }}
           />
