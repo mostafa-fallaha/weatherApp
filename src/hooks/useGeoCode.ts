@@ -76,7 +76,7 @@ export interface Daily {
   uvi: number;
   alerts: Alert[];
 }
-
+// df
 interface AllData {
   timezone: string;
   current: Current;
