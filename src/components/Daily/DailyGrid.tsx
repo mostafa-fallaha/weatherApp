@@ -28,7 +28,7 @@ function DailyGrid({ daily_forecast }: Props) {
         flexWrap="wrap"
         gap="1"
         width={{ base: "100%" }}
-        justifyContent={{ base: "flex-start" }}
+        justifyContent={{ base: "center" }}
       >
         {daily_forecast.slice(1, 7).map((day) => (
           <Link to="/day-details" state={{ day: day }} key={day.dt}>
