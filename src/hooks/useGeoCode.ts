@@ -98,7 +98,7 @@ const useGeoCode = (city: string) => {
     const controler = new AbortController();
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`,
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`,
         { signal: controler.signal }
       )
       .then((res) => {
