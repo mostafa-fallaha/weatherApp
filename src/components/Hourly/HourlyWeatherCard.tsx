@@ -187,7 +187,7 @@ function HourlyWeatherCard({ hour }: Props) {
 
       <Box
         display={contentVisible ? "flex" : "none"}
-        marginLeft={{ base: "40%", sm2: "38%", md: "44%", lg: "4%" }}
+        marginLeft={{ base: "40%", sm2: "38%", md: "44%", lg: "43%" }}
       >
         <Text
           fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
