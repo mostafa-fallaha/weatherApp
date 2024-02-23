@@ -6,10 +6,10 @@ function DailySkeletons() {
   return (
     <Box
       display="flex"
-      marginTop={{ base: "17%", sm2: "15.5%", lg: "5.5%" }}
-      marginLeft={{ base: "6%", sm2: "9.5%", lg: "0%" }}
+      marginTop={{ base: "17%", sm2: "15.5%", md: "6%", md2: "6%", lg: "5.5%" }}
+      marginLeft={{ base: "6%", sm2: "9.5%", md: "0%", lg: "0%" }}
       flexWrap="wrap"
-      width={{ base: "50vh", sm2: "60vh", lg: "50vh" }}
+      width={{ base: "50vh", sm2: "60vh", md: "30%", lg: "50vh" }}
       gap="1"
     >
       {skeletons.map((s) => (

@@ -10,7 +10,7 @@ interface Props {
 function DailyGrid({ daily_forecast }: Props) {
   return (
     <Box
-      marginTop={{ base: "5%", md: "2%", lg: "1%" }}
+      marginTop={{ base: "5%", md: "2%", md2: "1.5%", lg: "1%" }}
       marginBottom={{ base: "5%" }}
       width={{ base: "100%", md: "30%", lg: "30%" }}
     >
@@ -18,7 +18,14 @@ function DailyGrid({ daily_forecast }: Props) {
         fontSize={{ base: 15, md: 20, lg: 25 }}
         fontWeight={800}
         width={{ base: "100%" }}
-        marginLeft={{ base: "3%", sm: "10%", sm2: "10%", md: "3%", lg: "12%" }}
+        marginLeft={{
+          base: "3%",
+          sm: "10%",
+          sm2: "10%",
+          md: "3%",
+          md2: "8%",
+          lg: "7%",
+        }}
       >
         Next 6 days Forecast
       </Text>

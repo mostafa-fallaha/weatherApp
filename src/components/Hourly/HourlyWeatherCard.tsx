@@ -41,13 +41,14 @@ function HourlyWeatherCard({ hour }: Props) {
         <Text
           fontWeight={800}
           marginLeft={{ base: 1, md: 2, lg: 5 }}
-          fontSize={{ base: 9.5, sm: 11, sm2: 12, md: 11, lg: 18 }}
+          fontSize={{ base: 9.5, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
           marginTop={5}
           width={{
             base: "30px",
             sm: "40px",
             sm2: "45px",
             md: "45px",
+            md2: "60px",
             lg: "80px",
           }}
           height={{ base: "25px" }}
@@ -59,20 +60,39 @@ function HourlyWeatherCard({ hour }: Props) {
         <Image
           src={getWeatherIcon(hour.weather[0].icon)}
           key={hour.weather[0].id}
-          width={{ base: "35px", sm: "40px", md: "40px", lg: "70px" }}
-          height={{ base: "35px", sm: "40px", md: "40px", lg: "70px" }}
-          marginTop={{ base: "4%", sm: "3.2%", md: "2%", lg: "0.5%" }}
+          width={{
+            base: "35px",
+            sm: "40px",
+            md: "40px",
+            md2: "55px",
+            lg: "70px",
+          }}
+          height={{
+            base: "35px",
+            sm: "40px",
+            md: "40px",
+            md2: "50px",
+            lg: "70px",
+          }}
+          marginTop={{
+            base: "4%",
+            sm: "3.2%",
+            md: "2%",
+            md2: "1%",
+            lg: "0.5%",
+          }}
         />
 
         <Box marginTop={{ base: 5 }} display="flex">
           <Text
-            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
             height={{ base: "25px" }}
             width={{
               base: "50px",
               sm: "60px",
               sm2: "65px",
               md: "100px",
+              md2: "140px",
               lg: "200px",
             }}
             marginLeft={1}
@@ -81,7 +101,7 @@ function HourlyWeatherCard({ hour }: Props) {
           </Text>
 
           <Text
-            fontSize={{ base: 9.5, sm: 11, sm2: 12, md: 11, lg: 18 }}
+            fontSize={{ base: 9.5, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
             height={{ base: "25px" }}
             fontWeight={700}
             width={{
@@ -89,6 +109,7 @@ function HourlyWeatherCard({ hour }: Props) {
               sm: "50px",
               sm2: "60px",
               md: "60px",
+              md2: "80px",
               lg: "120px",
             }}
           >
@@ -98,18 +119,31 @@ function HourlyWeatherCard({ hour }: Props) {
 
           <Image
             src="./drops.png"
-            width={{ base: "15px", sm: "17px", md: "15px", lg: "25px" }}
-            height={{ base: "15px", sm: "17px", md: "15px", lg: "25px" }}
+            width={{
+              base: "15px",
+              sm: "17px",
+              md: "15px",
+              md2: "20px",
+              lg: "25px",
+            }}
+            height={{
+              base: "15px",
+              sm: "17px",
+              md: "15px",
+              md2: "20px",
+              lg: "25px",
+            }}
           />
 
           <Text
-            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
             height={{ base: "25px" }}
             width={{
               base: "25px",
               sm: "30px",
               sm2: "40px",
               md: "40px",
+              md2: "55px",
               lg: "90px",
             }}
             marginLeft={{ base: 1, sm: 1, md: 2, lg: 2 }}
@@ -117,28 +151,29 @@ function HourlyWeatherCard({ hour }: Props) {
             {(hour.pop * 100).toFixed(0)}%
           </Text>
 
-          <Box marginTop={{ base: "0%", lg: "0.7%" }}>
+          <Box marginTop={{ base: "0%", md2: "0.5%", lg: "0.7%" }}>
             <TbWind />
           </Box>
           <Text
             marginLeft={{ base: 1, lg: 2 }}
-            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
             height={{ base: "25px" }}
             width={{
               base: "55px",
               sm: "60px",
               sm2: "70px",
               md: "65px",
+              md2: "90px",
               lg: "120px",
             }}
           >
             <b>{(hour.wind_speed * 3.6).toFixed(1)}</b> km/h
           </Text>
-          <Box marginTop={{ base: "0%", lg: "0.7%" }}>
+          <Box marginTop={{ base: "0%", md2: "0.6%", lg: "0.7%" }}>
             <IoSunnyOutline />
           </Box>
           <Text
-            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
             height={{ base: "25px" }}
             width={{ base: "10px", md: "30px" }}
             marginLeft={1}
@@ -152,18 +187,18 @@ function HourlyWeatherCard({ hour }: Props) {
 
       <Box
         display={contentVisible ? "flex" : "none"}
-        marginLeft={{ base: "40%", sm2: "38%", md: "44%", lg: "43%" }}
+        marginLeft={{ base: "40%", sm2: "38%", md: "44%", lg: "4%" }}
       >
         <Text
-          fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+          fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
           height={{ base: "25px" }}
           width={{ base: "70px", sm: "90px", md: "100px", lg: "130px" }}
         >
           humidity: <b>{hour.humidity} </b>%
         </Text>
         <Text
-          marginLeft={{ base: 2, lg: 10 }}
-          fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+          marginLeft={{ base: 2, md2: 10, lg: 10 }}
+          fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, md2: 15, lg: 18 }}
           height={{ base: "25px" }}
           width={{ base: "90px", sm: "100px", md: "150px" }}
         >

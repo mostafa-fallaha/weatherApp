@@ -15,13 +15,13 @@ function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
         fontSize={{ base: 14, md: 20, lg: 25 }}
         fontWeight={800}
         width={{ base: "90%", md: "70vh", lg: "70vh" }}
-        marginLeft={{ base: "3%", lg: "1%" }}
+        marginLeft={{ base: "3%", md: "1%", lg: "1%" }}
       >
         Next 12 hour Forecast
       </Text>
       <HStack
         width={{ base: "90%", lg: "70vh" }}
-        marginLeft={{ base: "3%", lg: "1%" }}
+        marginLeft={{ base: "3%", md: "1%", lg: "1%" }}
       >
         <abbr title="sunrise">
           <BsSunriseFill />
