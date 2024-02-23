@@ -21,7 +21,10 @@ function DailyCard({ day }: Props) {
       transition="0.5s"
       padding={{ base: "2%" }}
     >
-      <Text fontWeight={700} fontSize={{ base: 10, sm: 11, sm2: 12, md: 18 }}>
+      <Text
+        fontWeight={700}
+        fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
+      >
         {convert.UnixToDayName(d)}
       </Text>
       <HStack justifyContent={"space-evenly"} marginTop={2}>
@@ -32,13 +35,13 @@ function DailyCard({ day }: Props) {
         />
         <VStack>
           <Text
-            fontSize={{ base: 10, sm: 11, sm2: 12, md: 18 }}
+            fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}
             fontWeight={700}
           >
             {day.temp.day.toFixed(1)}
             {`\u00B0C`}
           </Text>
-          <Text fontSize={{ base: 10, sm: 11, sm2: 12, md: 18 }}>
+          <Text fontSize={{ base: 10, sm: 11, sm2: 12, md: 11, lg: 18 }}>
             {day.weather[0].description}
           </Text>
         </VStack>

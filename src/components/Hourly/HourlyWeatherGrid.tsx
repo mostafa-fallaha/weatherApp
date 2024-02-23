@@ -10,9 +10,9 @@ interface Props {
 
 function HourlyWeatherGrid({ hourly_forecast, current }: Props) {
   return (
-    <Box marginTop={"1%"} width={{ base: "100%", md: "60%" }}>
+    <Box marginTop={"1%"} width={{ base: "100%", md: "60%", lg: "60%" }}>
       <Text
-        fontSize={{ base: 14, lg: 25 }}
+        fontSize={{ base: 14, md: 20, lg: 25 }}
         fontWeight={800}
         width={{ base: "90%", md: "70vh", lg: "70vh" }}
         marginLeft={{ base: "3%", lg: "1%" }}

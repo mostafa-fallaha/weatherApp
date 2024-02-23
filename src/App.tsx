@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -27,29 +27,15 @@ function App() {
           <NavBar onSearch={(str) => setCity(str)} />
         </GridItem>
 
-        <Show above="lg">
-          <GridItem area="main">
-            <TimeZoneTitle cityName={city} />
-            <BrowserRouter>
-              <Routes>
-                <Route path="" element={<ContainerAll city={city} />} />
-                <Route path="/day-details" element={<DayDetails />} />
-              </Routes>
-            </BrowserRouter>
-          </GridItem>
-        </Show>
-
-        <Show below="780px">
-          <GridItem area="main">
-            <TimeZoneTitle cityName={city} />
-            <BrowserRouter>
-              <Routes>
-                <Route path="" element={<ContainerAll city={city} />} />
-                <Route path="/day-details" element={<DayDetails />} />
-              </Routes>
-            </BrowserRouter>
-          </GridItem>
-        </Show>
+        <GridItem area="main">
+          <TimeZoneTitle cityName={city} />
+          <BrowserRouter>
+            <Routes>
+              <Route path="" element={<ContainerAll city={city} />} />
+              <Route path="/day-details" element={<DayDetails />} />
+            </Routes>
+          </BrowserRouter>
+        </GridItem>
       </Grid>
     </Box>
   );
