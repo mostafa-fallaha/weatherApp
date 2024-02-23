@@ -61,6 +61,7 @@ function DayDetails() {
         display="flex"
         justifyContent="space-evenly"
         flexWrap="wrap"
+        gap={{ base: 2, md: 0 }}
       >
         <DetailCard
           title="Day"
@@ -107,12 +108,13 @@ function DayDetails() {
         display="flex"
         justifyContent="space-evenly"
         flexWrap="wrap"
+        gap={{ base: 2, md: 0 }}
       >
         <DetailCard
           title="Chance of rain"
           content={(day.pop * 100).toString() + " %"}
         >
-          <Image src="./src/assets/drops.png" width="20px" height="20px" />
+          <Image src="drops.png" width="20px" height="20px" />
         </DetailCard>
         <DetailCard title="Cloudiness" content={day.clouds.toString() + " %"}>
           <FaCloud />
