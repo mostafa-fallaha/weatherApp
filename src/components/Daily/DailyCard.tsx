@@ -23,7 +23,6 @@ function DailyCard({ day }: Props) {
       }}
       backgroundColor={"none"}
       border={"1px solid #81aeca"}
-      _hover={{ width: "23vh" }}
       transition="0.5s"
       padding={{ base: "2%" }}
     >
